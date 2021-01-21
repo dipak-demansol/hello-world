@@ -97,7 +97,7 @@ describe('Test AutoLink', function () {
         cy.contains('Pattern: ');
     });
 
-    it('Pattern is applied', function () {
+    it('Pattern is applied - MM-T1234', function () {
         //Pattern is applied
         cy.get('#post_textbox').clear;
         cy.postMessage('MM-1234{enter}');
