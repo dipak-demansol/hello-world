@@ -8,7 +8,6 @@
 // ***************************************************************
 
 import {getRandomId} from '../utils/index';
-
 import {getAdminAccount} from '../support/env';
 
 const sysadmin = getAdminAccount();
@@ -23,6 +22,7 @@ describe('Test AutoLink', function () {
     before(() => {
         cy.apiUpdateConfig({
             PluginSettings: {
+                // # Enable the 'autolink' plugin and enable the admin account for it
                 PluginStates: {'mattermost-autolink': {Enable: true}},
                 Plugins: {'mattermost-autolink': {enableadmincommand: true}},
             },
@@ -40,7 +40,7 @@ describe('Test AutoLink', function () {
             team2 = team;
         });
 
-        // Istall Plugin using API and enable admin  commands
+        // # Install Plugin using API and enable admin  commands
         cy.apiInstallPluginFromUrl(
             `https://github.com/mattermost/mattermost-plugin-autolink/releases/download/v1.2.0/mattermost-autolink-1.2.0.tar.gz`,
             true,
