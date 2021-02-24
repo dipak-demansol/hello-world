@@ -43,7 +43,7 @@ jobs:
       - mattermost-plugin-notify/status:
           failure_message: This very important job has failed! Ping @senior-developer
           success_message: 'Life is beautiful, my job has succeeded!'
-          webhook: webhook URL
+          webhook: https://dkh-sandbox.test.mattermost.cloud/plugins/com.github.nathanaelhoun.plugin-circleci/hooks/jvHVYK4lKthVNhRKhBPMgYFTtFytwspq
 workflows:
   version: 2
   build:
