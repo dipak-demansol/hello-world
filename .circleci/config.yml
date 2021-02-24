@@ -1,5 +1,6 @@
-version: 2.0
-
+version: 2.1
+orbs:
+  mattermost-plugin-notify: nathanaelhoun/mattermost-plugin-notify@1.2.0
 jobs:
   "ruby-2.2":
     docker:
