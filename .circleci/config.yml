@@ -3,6 +3,10 @@ orbs:
   mattermost-plugin-notify: nathanaelhoun/mattermost-plugin-notify@1.2.0
 jobs:
   "ruby-2.2":
+  - mattermost-plugin-notify/status:
+          failure_message: This very important job has failed! Ping @senior-developer
+          success_message: 'Life is beautiful, my job has succeeded!'
+          webhook: https://dkh-sandbox.test.mattermost.cloud/plugins/com.github.nathanaelhoun.plugin-circleci/hooks/jvHVYK4lKthVNhRKhBPMgYFTtFytwspq
     docker:
       - image: circleci/ruby:2.2-node
       - image: circleci/postgres:9.4.12-alpine
@@ -40,10 +44,7 @@ jobs:
       - run:
           name: Run tests
           command: rake
-      - mattermost-plugin-notify/status:
-          failure_message: This very important job has failed! Ping @senior-developer
-          success_message: 'Life is beautiful, my job has succeeded!'
-          webhook: https://dkh-sandbox.test.mattermost.cloud/plugins/com.github.nathanaelhoun.plugin-circleci/hooks/jvHVYK4lKthVNhRKhBPMgYFTtFytwspq
+      
 workflows:
   version: 2
   build:
